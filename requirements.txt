@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+psycopg2-binary
+sqlalchemy
+python-dotenv
+langchain
+openai
+langchain-openai
+pinecone
+langchain-community
+langchain-text-splitters
+
+
+
