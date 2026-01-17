@@ -24,4 +24,11 @@ def get_order(order_id: int, db: Session = Depends(get_db)):
     if not result:
         return {"error": "Order not found"}
 
-    return dict(result._mapping)
+    row = dict(result._mapping)
+    return {
+        "order_id": row["id"],
+        "status": row["status"],
+        "total_amount": float(row["total_amount"]),
+        "currency": row["currency"],
+        "created_at": row["created_at"],
+    }

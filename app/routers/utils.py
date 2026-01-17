@@ -16,14 +16,18 @@ MOCK_RATES = {
     description="Internal tool: Convert amount between currencies",
 )
 def convert(amount: float, from_currency: str, to_currency: str):
-    rate = MOCK_RATES.get((from_currency, to_currency))
+    # Normalize to uppercase
+    from_curr = from_currency.upper()
+    to_curr = to_currency.upper()
+
+    rate = MOCK_RATES.get((from_curr, to_curr))
     if not rate:
-        return {"error": "Rate not available"}
+        return {"error": f"Rate not available for {from_curr} to {to_curr}"}
 
     return {
         "amount": amount,
-        "from": from_currency,
-        "to": to_currency,
+        "from_currency": from_curr,
+        "to_currency": to_curr,
         "converted_amount": amount * rate,
         "rate": rate,
     }
