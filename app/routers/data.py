@@ -9,10 +9,11 @@ import os
 
 router = APIRouter()
 
-KNOWLEDGE_BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "knowledge_base")
+KNOWLEDGE_BASE_DIR = os.path.join(
+    os.path.dirname(__file__), "..", "..", "knowledge_base"
+)
 
 
-# Response Models
 class OrderItem(BaseModel):
     order_id: int
     status: str
