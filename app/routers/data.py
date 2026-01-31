@@ -135,7 +135,6 @@ def get_knowledge_files():
                 with open(filepath, "r", encoding="utf-8") as f:
                     content = f.read()
 
-                # Create a readable title from filename
                 title = filename.replace("_", " ").replace(".txt", "").title()
 
                 files.append(
