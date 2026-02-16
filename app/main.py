@@ -11,7 +11,7 @@ from app.routers import orders, revenue, utils, agent, data
 logger = logging.getLogger(__name__)
 
 RENDER_EXTERNAL_URL = os.environ.get("RENDER_EXTERNAL_URL")
-PING_INTERVAL = 10 * 60  # 14 minutes (Render sleeps after 15 min of inactivity)
+PING_INTERVAL = 10 * 60  # 10 minutes (Render sleeps after 15 min of inactivity)
 
 
 async def keep_alive():
